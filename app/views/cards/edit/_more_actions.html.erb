@@ -1,0 +1,21 @@
+<div class="mx-10">
+  <div class="flex flex-col">
+    <div class="flex flex-row justify-between space-x-4">
+      <% if previous_label(card.status) %>
+        <div class="<%= new_button_class %>"><%= previous_label(card.status) %></div>
+      <% end %>
+      <div>
+        <%= image_tag(
+              "trash.svg",
+              size: "25x25",
+              class: "min-h-[25px] min-w-[25px]"
+            ) %>
+      </div>
+    </div>
+    <div class="flex flex-row justify-between space-x-4 mt-6">
+      <div class="mx-4 <%= new_button_class %>">
+        <%= f.submit("Submit") %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.chevron-right {
+  background-image: url("chevron_right.svg");
+}
+
+.chevron-down {
+  background-image: url("chevron_down.svg");
+}
+
+.chevron-up {
+  background-image: url("chevron_up.svg");
+}
+
+.handle {
+  background-image: url("switch_vertical.svg");
+}
