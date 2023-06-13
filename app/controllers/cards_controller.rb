@@ -43,7 +43,7 @@ class CardsController < ApplicationController
   def update
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to :root, notice: "Card was successfully updated." }
+        format.html { redirect_to @card.project, notice: "Card was successfully updated." }
         format.json { redirect_to :root }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class CardsController < ApplicationController
     @card.destroy
 
     respond_to do |format|
-      format.html { redirect_to :root, notice: "Card was successfully destroyed." }
+      format.html { redirect_to(@card.project, notice: "Card was successfully destroyed.") }
       format.json { head :no_content }
     end
   end
