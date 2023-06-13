@@ -5,6 +5,7 @@ class CardsController < ApplicationController
   def index
     if params[:query]
       project = Project.find(params[:project_id])
+      @query = params[:query]
       @cards = Search.new(project).search(params[:query])
     else
       @cards = Card.all

@@ -1,13 +1,19 @@
 <div class="w-full flex">
   <div class="w-full">
-    <%= link_to("Edit this project",
+    <%= link_to(
+          "Edit this project",
           edit_project_path(@project),
-          class: "#{button_class}")
-    %>
+          class: "#{button_class}"
+        ) %>
     <div class="inline-block ml-2">
-      <%= button_to('Destroy this project', project_path(@project), method: :delete, class: "#{button_class}") %>
+      <%= button_to(
+            "Destroy this project",
+            project_path(@project),
+            data: {"turbo-method": :delete, turbo_confirm: "Are You Sure"},
+            class: "#{button_class}"
+          ) %>
     </div>
-    <%= link_to 'Back to projects', projects_path, class: "#{button_class}" %>
+    <%= link_to("List all projects", projects_path, class: "#{button_class}") %>
 
     <%= render @project %>
   </div>

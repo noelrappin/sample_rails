@@ -1,5 +1,14 @@
 <div class="w-full">
+  <div class="font-bold text-4xl text-center w-full mb-10">
+    Projects
+  </div>
   <div id="projects" class="min-w-full">
-    <%= render @projects %>
+    <% @projects.each do |project| %>
+      <div class="text-2xl">
+        <%= project.name %>
+        (<%= project.cards_for("started").count %> cards in progress)
+        <%= link_to("Go To Project", project, class: "#{new_button_class}") %>
+      </div>
+    <% end %>
   </div>
 </div>
