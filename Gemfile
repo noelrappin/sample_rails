@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby file: ".ruby-version"
+
 gem "acts_as_list"
 gem "awesome_print"
 gem "chartkick"
@@ -15,7 +17,7 @@ gem "propshaft"
 gem "puma"
 gem "rails"
 gem "redis"
-gem "sqlite3"
+gem "sqlite3", "~> 1.4"
 gem "simple_form", github: "loqimean/simple_form"
 # gem "simple_form-tailwind"
 gem "stimulus-rails"
